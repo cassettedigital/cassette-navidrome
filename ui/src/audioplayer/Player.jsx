@@ -236,7 +236,7 @@ const Player = () => {
   const onAudioProgress = useCallback(
     (info) => {
       if (info.ended) {
-        document.title = 'Navidrome'
+        document.title = 'Cassette Player'
       }
 
       const progress = (info.currentTime / info.duration) * 100
@@ -374,7 +374,7 @@ const Player = () => {
   }, [dispatch])
 
   if (!visible) {
-    document.title = 'Navidrome'
+    document.title = 'Cassette Player'
   }
 
   const handlers = useMemo(
