@@ -46,6 +46,18 @@ export default {
     },
   },
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          fontFamily: "'Barlow Condensed', sans-serif",
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+        },
+        code: {
+          fontFamily: "'DM Mono', monospace",
+        },
+      },
+    },
     MuiPaper: {
       root: {
         color: '#EDE4D0',
