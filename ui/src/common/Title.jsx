@@ -8,7 +8,7 @@ export const Title = ({ subTitle, args }) => {
   const text = translate(subTitle, { ...args, _: subTitle })
 
   if (isDesktop) {
-    return <span>Navidrome {text ? ` - ${text}` : ''}</span>
+    return <span>Cassette Player{text ? ` - ${text}` : ''}</span>
   }
   return <span>{text ? text : 'Cassette Player'}</span>
 }

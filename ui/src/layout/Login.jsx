@@ -130,7 +130,7 @@ const FormLogin = ({ loading, handleSubmit, validate }) => {
                   rel="noopener noreferrer"
                   className={classes.systemNameLink}
                 >
-                  Navidrome
+                  Open Source (GPL v3)
                 </a>
               </div>
               {config.welcomeMessage && (
