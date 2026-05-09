@@ -1,5 +1,6 @@
 import LightTheme from './light'
 import DarkTheme from './dark'
+import CassetteTheme from './CassetteTheme'
 import ExtraDarkTheme from './extradark'
 import GreenTheme from './green'
 import SpotifyTheme from './spotify'
@@ -23,6 +24,7 @@ export default {
 
   // New themes should be added here, in alphabetic order
   AmusicTheme,
+  CassetteTheme,
   CatppuccinMacchiatoTheme,
   DraculaTheme,
   ElectricPurpleTheme,
