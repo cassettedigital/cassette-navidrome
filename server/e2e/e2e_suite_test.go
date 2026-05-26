@@ -289,6 +289,13 @@ func (n noopArtwork) GetOrPlaceholder(_ context.Context, _ string, _ int, _ bool
 	return io.NopCloser(io.LimitReader(nil, 0)), time.Time{}, nil
 }
 
+// cassette Patch 004: required by the Artwork interface; e2e suite returns
+// the same empty reader as GetOrPlaceholder so existing flows continue to
+// pass without exercising the missing-art error path.
+func (n noopArtwork) GetWithoutPlaceholder(_ context.Context, _ string, _ int, _ bool) (io.ReadCloser, time.Time, error) {
+	return io.NopCloser(io.LimitReader(nil, 0)), time.Time{}, nil
+}
+
 // spyStreamer captures the Request passed to NewStream for test assertions,
 // then returns a minimal fake Stream so the handler completes without error.
 type spyStreamer struct {

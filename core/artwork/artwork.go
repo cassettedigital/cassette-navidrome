@@ -22,6 +22,12 @@ var ErrUnavailable = errors.New("artwork unavailable")
 type Artwork interface {
 	Get(ctx context.Context, artID model.ArtworkID, size int, square bool) (io.ReadCloser, time.Time, error)
 	GetOrPlaceholder(ctx context.Context, id string, size int, square bool) (io.ReadCloser, time.Time, error)
+	// cassette Patch 004: resolves artwork by id without falling back to a
+	// PlaceholderAlbumArt PNG. Subsonic GetCoverArt uses this so the iOS
+	// client can distinguish "no real cover art" from "real cover art that
+	// happens to look like a cassette icon", and surface a proper ghost
+	// initial placeholder instead.
+	GetWithoutPlaceholder(ctx context.Context, id string, size int, square bool) (io.ReadCloser, time.Time, error)
 }
 
 func NewArtwork(ds model.DataStore, cache cache.FileCache, ffmpeg ffmpeg.FFmpeg, provider external.Provider) Artwork {
@@ -55,6 +61,17 @@ func (a *artwork) GetOrPlaceholder(ctx context.Context, id string, size int, squ
 		return reader, consts.ServerStart, nil
 	}
 	return reader, lastUpdate, err
+}
+
+// cassette Patch 004: resolves artwork by id without the placeholder fallback.
+// Returns ErrUnavailable / model.ErrNotFound when there's no real cover art so
+// the Subsonic layer can map it to error code 70 instead of streaming a PNG.
+func (a *artwork) GetWithoutPlaceholder(ctx context.Context, id string, size int, square bool) (io.ReadCloser, time.Time, error) {
+	artID, err := a.getArtworkId(ctx, id)
+	if err != nil {
+		return nil, time.Time{}, err
+	}
+	return a.Get(ctx, artID, size, square)
 }
 
 func (a *artwork) Get(ctx context.Context, artID model.ArtworkID, size int, square bool) (reader io.ReadCloser, lastUpdate time.Time, err error) {

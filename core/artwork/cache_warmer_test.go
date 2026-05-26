@@ -214,6 +214,12 @@ func (m *mockArtwork) GetOrPlaceholder(ctx context.Context, id string, size int,
 	return m.Get(ctx, model.ArtworkID{}, size, square)
 }
 
+// cassette Patch 004: mirrors GetOrPlaceholder for tests; the cache warmer
+// itself doesn't use this method, but the Artwork interface now requires it.
+func (m *mockArtwork) GetWithoutPlaceholder(ctx context.Context, id string, size int, square bool) (io.ReadCloser, time.Time, error) {
+	return m.Get(ctx, model.ArtworkID{}, size, square)
+}
+
 type mockFileCache struct {
 	disabled atomic.Bool
 	ready    atomic.Bool

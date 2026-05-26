@@ -10,6 +10,7 @@ import (
 
 	"github.com/navidrome/navidrome/conf"
 	"github.com/navidrome/navidrome/consts"
+	"github.com/navidrome/navidrome/core/artwork"
 	"github.com/navidrome/navidrome/log"
 	"github.com/navidrome/navidrome/model"
 	"github.com/navidrome/navidrome/resources"
@@ -67,11 +68,15 @@ func (api *Router) GetCoverArt(w http.ResponseWriter, r *http.Request) (*respons
 	size := p.IntOr("size", 0)
 	square := p.BoolOr("square", false)
 
-	imgReader, lastUpdate, err := api.artwork.GetOrPlaceholder(ctx, id, size, square)
+	// cassette Patch 004: route cover art through GetWithoutPlaceholder so
+	// missing artwork returns Subsonic error code 70 instead of the
+	// vinyl-record placeholder PNG. The iOS client renders its own ghost
+	// initial placeholder when the server reports no cover art.
+	imgReader, lastUpdate, err := api.artwork.GetWithoutPlaceholder(ctx, id, size, square)
 	switch {
 	case errors.Is(err, context.Canceled):
 		return nil, nil
-	case errors.Is(err, model.ErrNotFound):
+	case errors.Is(err, model.ErrNotFound), errors.Is(err, artwork.ErrUnavailable):
 		log.Warn(r, "Couldn't find coverArt", "id", id, err)
 		return nil, newError(responses.ErrorDataNotFound, "Artwork not found")
 	case err != nil:

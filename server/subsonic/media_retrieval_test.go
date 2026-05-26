@@ -51,13 +51,18 @@ var _ = Describe("MediaRetrievalController", func() {
 			Expect(w.Body.String()).To(Equal(artwork.data))
 		})
 
-		It("should return placeholder if id parameter is missing (mimicking Subsonic)", func() {
+		// cassette Patch 004: GetCoverArt no longer falls back to the
+		// placeholder PNG when artwork is unavailable. Missing id now maps
+		// to Subsonic error code 70 ("Artwork not found") so the iOS client
+		// can render its own ghost initial placeholder instead of stamping
+		// the server's vinyl-record art onto every albumless row.
+		It("should return ErrorDataNotFound if id parameter is missing", func() {
 			r := newGetRequest() // No id parameter
 			_, err := router.GetCoverArt(w, r)
 
-			Expect(err).To(BeNil())
+			Expect(err).To(MatchError("Artwork not found"))
 			Expect(artwork.recvId).To(BeEmpty())
-			Expect(w.Body.String()).To(Equal(artwork.data))
+			Expect(w.Body.String()).To(BeEmpty())
 		})
 
 		It("should fail when the file is not found", func() {
@@ -346,6 +351,28 @@ func (c *fakeArtwork) GetOrPlaceholder(_ context.Context, id string, size int, s
 	if c.ctxCancelFunc != nil {
 		c.ctxCancelFunc() // Simulate context cancellation
 		return nil, time.Time{}, context.Canceled
+	}
+	return io.NopCloser(bytes.NewReader([]byte(c.data))), time.Time{}, nil
+}
+
+// cassette Patch 004: GetCoverArt now routes through GetWithoutPlaceholder so
+// missing artwork surfaces as Subsonic error code 70 instead of a placeholder
+// PNG. The fake mirrors GetOrPlaceholder semantics (record id/size/square and
+// return canned data) but returns ErrUnavailable when the id is empty so the
+// "missing id" test path exercises the new error mapping.
+func (c *fakeArtwork) GetWithoutPlaceholder(_ context.Context, id string, size int, square bool) (io.ReadCloser, time.Time, error) {
+	if c.err != nil {
+		return nil, time.Time{}, c.err
+	}
+	c.recvId = id
+	c.recvSize = size
+	c.recvSquare = square
+	if c.ctxCancelFunc != nil {
+		c.ctxCancelFunc() // Simulate context cancellation
+		return nil, time.Time{}, context.Canceled
+	}
+	if id == "" {
+		return nil, time.Time{}, artwork.ErrUnavailable
 	}
 	return io.NopCloser(bytes.NewReader([]byte(c.data))), time.Time{}, nil
 }
