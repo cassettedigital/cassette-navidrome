@@ -27,7 +27,12 @@ import (
 	_ "github.com/navidrome/navidrome/adapters/gotaglib"
 	_ "github.com/navidrome/navidrome/adapters/lastfm"
 	_ "github.com/navidrome/navidrome/adapters/listenbrainz"
-	_ "github.com/navidrome/navidrome/adapters/taglib"
+	// Cassette (native build): drop the CGO "legacy-taglib" extractor so the
+	// native/.app build needs no libtag/pkg-config and bundles no taglib dylib.
+	// The default extractor "taglib" is the pure-Go WASM adapters/gotaglib
+	// (consts.DefaultScannerExtractor), which the existing library was already
+	// scanned with under Docker — so this is behavior-preserving.
+	// _ "github.com/navidrome/navidrome/adapters/taglib"
 )
 
 var (
