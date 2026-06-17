@@ -235,8 +235,14 @@ func (s *Server) mountRootRedirector() {
 func (s *Server) frontendAssetsHandler() http.Handler {
 	r := chi.NewRouter()
 
-	r.Handle("/", Index(s.ds, ui.BuildAssets()))
-	r.Handle("/*", http.StripPrefix(s.appRoot, http.FileServer(http.FS(ui.BuildAssets()))))
+	// Cassette fork: we use Navidrome's Subsonic ENGINE, never its web frontend.
+	// The bundled SPA is suppressed entirely — any browser that reaches the UI
+	// is bounced to the Cassette dashboard. The Subsonic API (/rest), native API
+	// (/api), /auth and /ping are separate, more-specific routes mounted ahead of
+	// this catch-all, so they are unaffected. (See FORK_NOTES.md.)
+	const cassetteDashboard = "https://cassette.digital/dashboard/devices"
+	r.Handle("/", http.RedirectHandler(cassetteDashboard, http.StatusFound))
+	r.Handle("/*", http.RedirectHandler(cassetteDashboard, http.StatusFound))
 	return r
 }
 
