@@ -91,6 +91,7 @@ type configOptions struct {
 	DefaultUIVolume                 int
 	UISearchDebounceMs              int
 	UICoverArtSize                  int
+	CassetteEdgeImageHost           string
 	EnableReplayGain                bool
 	EnableCoverAnimation            bool
 	EnableNowPlaying                bool
@@ -740,6 +741,10 @@ func setViperDefaults() {
 	viper.SetDefault("defaultuivolume", consts.DefaultUIVolume)
 	viper.SetDefault("uisearchdebouncems", consts.DefaultUISearchDebounceMs)
 	viper.SetDefault("uicoverartsize", consts.DefaultUICoverArtSize)
+	// cassette Fast Album Art: edge image host for instant first-paint of
+	// covers not yet materialized locally (e.g. https://media.cassette.digital).
+	// Empty disables the edge fallback — the UI then uses local covers only.
+	viper.SetDefault("cassetteedgeimagehost", "")
 	viper.SetDefault("enablereplaygain", true)
 	viper.SetDefault("enablecoveranimation", true)
 	viper.SetDefault("enablenowplaying", true)

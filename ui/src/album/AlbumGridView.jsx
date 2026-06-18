@@ -119,6 +119,19 @@ const getColsForWidth = (width) => {
   return 9
 }
 
+// Fast Album Art: build a Cloudflare-edge cover URL for an album, sized to the
+// grid. Returns null when the edge host isn't configured (config.cassette
+// EdgeImageHost empty → feature dormant) or the album has no release-group
+// MBID — callers then use the local cover. The R2 key is the canonical
+// `covers/<mbid>/original.jpg` (normalized server-side).
+const edgeCoverUrl = (record, size) => {
+  const host = config.cassetteEdgeImageHost
+  const mbid = record?.mbzReleaseGroupId || record?.mbzAlbumId
+  if (!host || !mbid) return null
+  const s = size || 300
+  return `${host}/cdn-cgi/image/width=${s},height=${s},fit=cover,format=auto/covers/${mbid}/original.jpg`
+}
+
 const Cover = withContentRect('bounds')(({
   record,
   measureRef,
@@ -137,14 +150,28 @@ const Cover = withContentRect('bounds')(({
   )
 
   const url = subsonic.getCoverArtUrl(record, config.uiCoverArtSize, true)
-  const { imgUrl, loading: imageLoading } = useImageUrl(url)
+  const { imgUrl, loading: imageLoading, error: imageError } = useImageUrl(url)
+
+  // Fast Album Art: when the Player reports no local cover (cassette Patch 004
+  // returns Subsonic error 70 → useImageUrl error), paint instantly from the
+  // cassette.digital edge by release-group MBID. Materialized covers never hit
+  // this path, so there's no extra edge traffic for albums with local art. If
+  // the edge image also fails (e.g. R2 not yet normalized), fall back to the
+  // ghost placeholder. Dormant unless config.cassetteEdgeImageHost is set.
+  const [edgeErrored, setEdgeErrored] = React.useState(false)
+  const edgeUrl = edgeCoverUrl(record, config.uiCoverArtSize)
+  const src =
+    imageError && edgeUrl && !edgeErrored ? edgeUrl : imgUrl || undefined
 
   return (
     <div ref={measureRef} className={classes.coverContainer}>
       <div ref={dragAlbumRef}>
         <img
-          src={imgUrl || undefined}
+          src={src}
           alt={record.name}
+          onError={() => {
+            if (src === edgeUrl) setEdgeErrored(true)
+          }}
           className={`${classes.cover} ${imageLoading ? classes.coverLoading : ''}`}
         />
       </div>

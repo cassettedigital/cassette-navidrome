@@ -56,6 +56,7 @@ func serveIndex(ds model.DataStore, fs fs.FS, shareInfo *model.Share) http.Handl
 			"defaultUIVolume":           conf.Server.DefaultUIVolume,
 			"uiSearchDebounceMs":        conf.Server.UISearchDebounceMs,
 			"uiCoverArtSize":            conf.Server.UICoverArtSize,
+			"cassetteEdgeImageHost":     conf.Server.CassetteEdgeImageHost,
 			"enableCoverAnimation":      conf.Server.EnableCoverAnimation,
 			"enableNowPlaying":          conf.Server.EnableNowPlaying,
 			"gaTrackingId":              conf.Server.GATrackingID,
