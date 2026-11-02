@@ -728,7 +728,11 @@ func setViperDefaults() {
 	viper.SetDefault("coverartpriority", "cover.*, folder.*, front.*, embedded, external")
 	viper.SetDefault("coverartquality", 75)
 	viper.SetDefault("enablewebpencoding", false)
-	viper.SetDefault("artistartpriority", "artist.*, album/artist.*, external")
+	// cassette: dropped "external" — Cassette supplies open-license (Wikidata/
+	// Commons → R2) artist imagery via its own sync, so Navidrome must not serve
+	// external-agent artist images. This also stops it from serving any STALE
+	// cached URL still sitting in artist.*_image_url from a prior Deezer run.
+	viper.SetDefault("artistartpriority", "artist.*, album/artist.*")
 	viper.SetDefault("artistimagefolder", "")
 	viper.SetDefault("discartpriority", "disc*.*, cd*.*, cover.*, folder.*, front.*, discsubtitle, embedded")
 	viper.SetDefault("lyricspriority", ".lrc,.txt,embedded")
@@ -787,13 +791,17 @@ func setViperDefaults() {
 	viper.SetDefault("subsonic.enableaveragerating", true)
 	viper.SetDefault("subsonic.legacyclients", "DSub")
 	viper.SetDefault("subsonic.minimalclients", "SubMusic")
-	viper.SetDefault("agents", "deezer,lastfm,listenbrainz")
+	// cassette: removed "deezer" — no license to serve Deezer artist imagery.
+	viper.SetDefault("agents", "lastfm,listenbrainz")
 	viper.SetDefault("lastfm.enabled", true)
 	viper.SetDefault("lastfm.language", consts.DefaultInfoLanguage)
 	viper.SetDefault("lastfm.apikey", "")
 	viper.SetDefault("lastfm.secret", "")
 	viper.SetDefault("lastfm.scrobblefirstartistonly", false)
-	viper.SetDefault("deezer.enabled", true)
+	// cassette: Deezer agent hard-disabled (it was silently serving unlicensed
+	// artist images); with this false the init hook never registers the agent,
+	// so even a stray ND_AGENTS=deezer can't reactivate it.
+	viper.SetDefault("deezer.enabled", false)
 	viper.SetDefault("deezer.language", consts.DefaultInfoLanguage)
 	viper.SetDefault("listenbrainz.enabled", true)
 	viper.SetDefault("listenbrainz.baseurl", consts.DefaultListenBrainzBaseURL)
