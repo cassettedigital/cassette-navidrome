@@ -566,15 +566,9 @@
     "delete_user_content": "Вы уверены, что хотите удалить пользователя и все его данные (включая плейлисты и настройки)?",
     "notifications_blocked": "Вы заблокировали уведомления для этой страницы в настройках вашего браузера",
     "notifications_not_available": "Ваш браузер не поддерживает всплывающие уведомления",
-    "lastfmLinkSuccess": "Соединение с Last.fm установлено, скробблинг включен",
-    "lastfmLinkFailure": "Не удалось подключиться к Last.fm",
-    "lastfmUnlinkSuccess": "Соединение с Last.fm разорвано, скробблинг отключен",
-    "lastfmUnlinkFailure": "Не удалось разорвать соединение с Last.fm",
     "openIn": {
-      "lastfm": "Показать на Last.fm",
       "musicbrainz": "Показать на MusicBrainz"
     },
-    "lastfmLink": "Подробнее...",
     "listenBrainzLinkSuccess": "ListenBrainz скробблинг успешно подключен для пользователя: %{user}",
     "listenBrainzLinkFailure": "Не удалось подключить ListenBrainz:",
     "listenBrainzUnlinkSuccess": "ListenBrainz скробблинг отключен",
@@ -607,7 +601,6 @@
         "language": "Язык",
         "defaultView": "Вид по умолчанию",
         "desktop_notifications": "Уведомления на рабочем столе",
-        "lastfmScrobbling": "Скробблинг Last.fm",
         "listenBrainzScrobbling": "Скробблинг ListenBrainz",
         "replaygain": "Режим ReplayGain",
         "preAmp": "Предусилитель ReplayGain (дБ)",
@@ -615,8 +608,7 @@
           "none": "Отключено",
           "album": "Использовать усиление альбома",
           "track": "Использовать усиление трека"
-        },
-        "lastfmNotConfigured": "API-ключ Last.fm не настроен"
+        }
       }
     },
     "albumList": "Альбомы",

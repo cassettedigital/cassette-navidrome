@@ -29,7 +29,6 @@ const defaultConfig = {
   shareURL: '',
   defaultDownloadableShare: true,
   devSidebarPlaylists: true,
-  lastFMEnabled: true,
   listenBrainzEnabled: true,
   enableExternalServices: true,
   enableCoverAnimation: true,

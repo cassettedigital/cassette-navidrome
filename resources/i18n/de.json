@@ -564,16 +564,10 @@
     "delete_user_content": "Möchtest du diesen Benutzer und alle seine Daten (einschließlich Wiedergabelisten und Einstellungen) wirklich löschen?",
     "notifications_blocked": "Sie haben Benachrichtigungen für diese Seite in den Einstellungen Ihres Browsers blockiert",
     "notifications_not_available": "Dieser Browser unterstützt keine Desktop-Benachrichtigungen",
-    "lastfmLinkSuccess": "Last.fm Verbindung hergestellt und scrobbling aktiviert",
-    "lastfmLinkFailure": "Last.fm konnte nicht verbunden werden",
-    "lastfmUnlinkSuccess": "Last.fm Verbindung entfernt und scrobbling deaktiviert",
-    "lastfmUnlinkFailure": "Last.fm Verbindung konnte nicht entfernt werden",
     "openIn": {
-      "lastfm": "Auf Last.fm anzeigen",
       "musicbrainz": "Auf MusicBrainz anzeigen"
     },
-    "lastfmLink": "Mehr lesen",
-    "listenBrainzLinkSuccess": "Last.fm Verbindung hergestellt und und scrobbling aktiviert als user: %{user}",
+    "listenBrainzLinkSuccess": "ListenBrainz Verbindung hergestellt und scrobbling aktiviert als user: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz konnte nicht verbunden werden: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz Verbindung entfernt und scrobbling deaktiviert",
     "listenBrainzUnlinkFailure": "ListenBrainz Verbindung konnte nicht entfernt werden",
@@ -611,7 +605,6 @@
         "language": "Sprache",
         "defaultView": "Standard-Ansicht",
         "desktop_notifications": "Desktop-Benachrichtigungen",
-        "lastfmScrobbling": "Last.fm Scrobbling",
         "listenBrainzScrobbling": "ListenBrainz Scrobbling",
         "replaygain": "ReplayGain Modus",
         "preAmp": "ReplayGain Vorverstärkung (dB)",
@@ -619,8 +612,7 @@
           "none": "Deaktiviert",
           "album": "Album Gain verwenden",
           "track": "Titel Gain verwenden"
-        },
-        "lastfmNotConfigured": "Last.fm API-Key ist nicht konfiguriert"
+        }
       }
     },
     "albumList": "Alben",

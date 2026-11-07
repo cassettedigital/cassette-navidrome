@@ -564,15 +564,9 @@
     "delete_user_content": "Ви справді хочете видалити цього користувача та всі його дані (включаючи списки відтворення і налаштування)?",
     "notifications_blocked": "У вас заблоковані Сповіщення для цього сайту у вашому браузері",
     "notifications_not_available": "Ваш браузер не підтримує сповіщення, або ви не підключені до Navidrome через HTTPS",
-    "lastfmLinkSuccess": "Last.fm успішно підключено, scrobbling увімкнено",
-    "lastfmLinkFailure": "Last.fm не вдалося підключити",
-    "lastfmUnlinkSuccess": "Last.fm від'єднано та вимкнено scrobbling",
-    "lastfmUnlinkFailure": "Last.fm не вдалося від'єднати",
     "openIn": {
-      "lastfm": "Відкрити у Last.fm",
       "musicbrainz": "Відкрити у MusicBrainz"
     },
-    "lastfmLink": "Читати більше...",
     "listenBrainzLinkSuccess": "ListenBrainz успішно підключено і scrobbling увімкнено для користувача: %{user}.",
     "listenBrainzLinkFailure": "ListenBrainz не вдалося зв'язати: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz від'єднано та вимкнено scrobbling",
@@ -611,7 +605,6 @@
         "language": "Мова",
         "defaultView": "Вигляд по замовчуванню",
         "desktop_notifications": "Сповіщення",
-        "lastfmScrobbling": "Скробблінг до Last.fm",
         "listenBrainzScrobbling": "Скробблінг до ListenBrainz",
         "replaygain": "Режим ReplayGain",
         "preAmp": "ReplayGain підсилення (дБ)",
@@ -619,8 +612,7 @@
           "none": "Вимкнено",
           "album": "Використовувати підсилення для альбому",
           "track": "Використовувати підсилення для треку"
-        },
-        "lastfmNotConfigured": "API-ключ Last.fm не налаштовано"
+        }
       }
     },
     "albumList": "Альбом",

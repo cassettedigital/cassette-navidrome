@@ -564,15 +564,9 @@
     "delete_user_content": "Tes a certeza de querer eliminar esta usuaria e todos os seus datos (incluíndo listas e preferencias)?",
     "notifications_blocked": "Tes bloqueadas as Notificacións desta páxina web nos axustes do navegador",
     "notifications_not_available": "Este navegador non ten soporte para as notificacións de escritorio ou ben non estás accedendo Navidrome con https",
-    "lastfmLinkSuccess": "Ligouse Last.fm correctamente e o scrobbling está activado",
-    "lastfmLinkFailure": "Non se puido ligar Last.fm",
-    "lastfmUnlinkSuccess": "Desligouse Last.fm e desactivouse o scrobbling",
-    "lastfmUnlinkFailure": "Non se puido desligar Last.fm",
     "openIn": {
-      "lastfm": "Abrir en Last.fm",
       "musicbrainz": "Abrir en MusicBrainz"
     },
-    "lastfmLink": "Saber máis...",
     "listenBrainzLinkSuccess": "Conectouse correctamente con ListenBrainz e activouse o scrobbling para: %{user}",
     "listenBrainzLinkFailure": "Non se conectou con ListenBrainz: %{error}",
     "listenBrainzUnlinkSuccess": "Desconectouse ListenBrainz e desactivouse o scrobbling",
@@ -611,7 +605,6 @@
         "language": "Idioma",
         "defaultView": "Vista por defecto",
         "desktop_notifications": "Notificacións de escritorio",
-        "lastfmScrobbling": "Scrobble con Last.fm",
         "listenBrainzScrobbling": "Scrobble con ListenBrainz",
         "replaygain": "Modo ReplayGain",
         "preAmp": "PreAmp (dB) de ReplayGain",
@@ -619,8 +612,7 @@
           "none": "Desactivada",
           "album": "Usar ganancia do Álbum",
           "track": "Usar ganancia da Canción"
-        },
-        "lastfmNotConfigured": "Clave da API Last.fm non configurada"
+        }
       }
     },
     "albumList": "Álbums",

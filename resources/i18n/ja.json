@@ -485,15 +485,9 @@
     "delete_user_content": "このユーザーとその全てのデータ(プレイリストや設定)を削除してもよろしいですか？",
     "notifications_blocked": "ブラウザの設定でこのサイトの通知がブロックされています",
     "notifications_not_available": "このブラウザはデスクトップ通知をサポートしていません",
-    "lastfmLinkSuccess": "Last.fmとリンクしscrobbleが有効になりました",
-    "lastfmLinkFailure": "Last.fmとリンクできませんでした",
-    "lastfmUnlinkSuccess": "設定が解除され、Last.fmへのscrobbleは無効になっています",
-    "lastfmUnlinkFailure": "Last.fmとリンクできませんでした",
     "openIn": {
-      "lastfm": "Last.fmで開く",
       "musicbrainz": "MusicBrainzで開く"
     },
-    "lastfmLink": "続きを読む",
     "listenBrainzLinkSuccess": "%{user} へのscrobbling設定に成功しました",
     "listenBrainzLinkFailure": "ListenBrainzとのリンクに失敗しました: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainzとのリンクとscrobblingを無効化しました。",
@@ -525,7 +519,6 @@
         "language": "言語",
         "defaultView": "デフォルト画面",
         "desktop_notifications": "デスクトップ通知",
-        "lastfmScrobbling": "Last.fmへscrobbleする",
         "listenBrainzScrobbling": "ListenBrainzへscrobble",
         "replaygain": "ReplayGainモード",
         "preAmp": "プリアンプ",
@@ -533,8 +526,7 @@
           "none": "無効",
           "album": "アルバムゲインを使う",
           "track": "トラックゲインを使う"
-        },
-        "lastfmNotConfigured": "Last.fmのAPIキーが設定されていません"
+        }
       }
     },
     "albumList": "アルバム",

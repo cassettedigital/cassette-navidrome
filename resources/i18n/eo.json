@@ -564,15 +564,9 @@
     "delete_user_content": "Ĉu vi certas, ke vi volas forigi ĉi tiun uzanton kaj ĉiujn iliajn datumojn (inkluzive ludlistojn kaj preferojn) ?",
     "notifications_blocked": "Vi blokis sciigojn por ĉi tiu retejo en la agordoj de via retumilo",
     "notifications_not_available": "Ĉi tiu retumilo ne subtenas labortablajn sciigojn aŭ vi ne aliras Navidrome per https",
-    "lastfmLinkSuccess": "Last.fm sukcese ligiĝis kaj scrobbling ebliĝis",
-    "lastfmLinkFailure": "Last.fm ne povis ligiĝi",
-    "lastfmUnlinkSuccess": "Last.fm malligiĝis kaj scrobbling malebliĝis",
-    "lastfmUnlinkFailure": "Last.fm ne povis malligiĝi",
     "openIn": {
-      "lastfm": "Malfermi en Last.fm",
       "musicbrainz": "Malfermi en MusicBrainz"
     },
-    "lastfmLink": "Legi Pli...",
     "listenBrainzLinkSuccess": "ListenBrainz sukcese ligiĝis kaj scrobbling ebliĝis kiel uzanto: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz ne povis ligiĝi: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz malligiĝis kaj scrobbling malebliĝis",
@@ -611,7 +605,6 @@
         "language": "Lingvo",
         "defaultView": "Defaŭlta Vido",
         "desktop_notifications": "Labortablaj sciigoj",
-        "lastfmScrobbling": "Scrobble al Last.fm",
         "listenBrainzScrobbling": "Scrobble al ListenBrainz",
         "replaygain": "ReplayGain-Reĝimo",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Malebligita",
           "album": "Uzi Albuman Songajnon",
           "track": "Uzi Kantan Songajnon"
-        },
-        "lastfmNotConfigured": "API-ŝlosilo de Last.fm ne agordita"
+        }
       }
     },
     "albumList": "Albumoj",

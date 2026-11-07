@@ -564,15 +564,9 @@
     "delete_user_content": "您確定要刪除此使用者及其所有資料（包括播放清單和偏好設定）嗎？",
     "notifications_blocked": "您已在瀏覽器設定中封鎖了此網站的通知",
     "notifications_not_available": "此瀏覽器不支援桌面通知，或您並非透過 HTTPS 存取 Navidrome",
-    "lastfmLinkSuccess": "已成功連接 Last.fm 並開啟音樂記錄",
-    "lastfmLinkFailure": "無法連接 Last.fm",
-    "lastfmUnlinkSuccess": "已取消與 Last.fm 的連接並停用音樂記錄",
-    "lastfmUnlinkFailure": "無法取消與 Last.fm 的連接",
     "openIn": {
-      "lastfm": "在 Last.fm 中開啟",
       "musicbrainz": "在 MusicBrainz 中開啟"
     },
-    "lastfmLink": "查看更多…",
     "listenBrainzLinkSuccess": "已成功以 %{user} 的身份連接 ListenBrainz 並開啟音樂記錄",
     "listenBrainzLinkFailure": "無法連接 ListenBrainz：%{error}",
     "listenBrainzUnlinkSuccess": "已取消與 ListenBrainz 的連接並停用音樂記錄",
@@ -611,7 +605,6 @@
         "language": "語言",
         "defaultView": "預設畫面",
         "desktop_notifications": "桌面通知",
-        "lastfmScrobbling": "啟用 Last.fm 音樂記錄",
         "listenBrainzScrobbling": "啟用 ListenBrainz 音樂記錄",
         "replaygain": "重播增益模式",
         "preAmp": "重播增益前置放大器 (dB)",
@@ -619,8 +612,7 @@
           "none": "無",
           "album": "專輯增益",
           "track": "曲目增益"
-        },
-        "lastfmNotConfigured": "Last.fm API 金鑰未設定"
+        }
       }
     },
     "albumList": "專輯",

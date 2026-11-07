@@ -561,15 +561,9 @@
     "delete_user_content": "Czy jesteś pewien, że chcesz usunąć tego użytkownika oraz wszystkie jego dane (wliczając w to playlisty oraz ustawienia)?",
     "notifications_blocked": "Zablokowałeś Powiadomienia w ustawieniach swojej przeglądarki",
     "notifications_not_available": "Ta przeglądarka nie obsługuje powiadomień",
-    "lastfmLinkSuccess": "Połączono Last.fm i włączono scrobblowanie",
-    "lastfmLinkFailure": "Nie można połączyć Last.fm",
-    "lastfmUnlinkSuccess": "Odłączono Last.fm i wyłączono scrobblowanie",
-    "lastfmUnlinkFailure": "Nie można odłączyć Last.fm",
     "openIn": {
-      "lastfm": "Otwórz w Last.fm",
       "musicbrainz": "Otwórz w MusicBrainz"
     },
-    "lastfmLink": "Czytaj więcej...",
     "listenBrainzLinkSuccess": "Połączono ListenBrainz i włączono scrobblowanie dla użytkownika: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz nie mógł zostać połączony: %{error}",
     "listenBrainzUnlinkSuccess": "Odłączono ListenBrainz i wyłączono scrobblowanie",
@@ -602,7 +596,6 @@
         "language": "Język",
         "defaultView": "Widok Podstawowy",
         "desktop_notifications": "Powiadomienia",
-        "lastfmScrobbling": "Scrobbluj do Last.fm",
         "listenBrainzScrobbling": "Scrobbluj do ListenBrainz",
         "replaygain": "Tryb ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -610,8 +603,7 @@
           "none": "Wyłączony",
           "album": "Użyj Wzmocnienia Albumu",
           "track": "Użyj Wzmocnienia Utworu"
-        },
-        "lastfmNotConfigured": "Klucz-API Last.fm jest nieskonfigurowany"
+        }
       }
     },
     "albumList": "Albumy",

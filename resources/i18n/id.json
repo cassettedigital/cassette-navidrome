@@ -561,15 +561,9 @@
     "delete_user_content": "Apakah Kamu yakin ingin menghapus pengguna ini dan semua datanya (termasuk daftar putar dan preferensi)?",
     "notifications_blocked": "Kamu telah memblokir Notifikasi untuk situs ini di pengaturan browser Anda",
     "notifications_not_available": "Browser ini tidak mendukung notifikasi desktop atau Kamu tidak mengakses Navidrome melalui https",
-    "lastfmLinkSuccess": "Last.fm berhasil ditautkan dan scrobbling diaktifkan",
-    "lastfmLinkFailure": "Last.fm tidak dapat ditautkan",
-    "lastfmUnlinkSuccess": "Tautan Last.fm dibatalkan dan scrobbling dinonaktifkan",
-    "lastfmUnlinkFailure": "Tautan Last.fm tidak dapat dibatalkan",
     "openIn": {
-      "lastfm": "Lihat di Last.fm",
       "musicbrainz": "Lihat di MusicBrainz"
     },
-    "lastfmLink": "Baca selengkapnya...",
     "listenBrainzLinkSuccess": "ListenBrainz berhasil ditautkan dan scrobbling diaktifkan sebagai pengguna: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz tidak dapat ditautkan: %{error}",
     "listenBrainzUnlinkSuccess": "Tautan ListenBrainz dibatalkan dan scrobbling dinonaktifkan",
@@ -602,7 +596,6 @@
         "language": "Bahasa",
         "defaultView": "Tampilan Bawaan",
         "desktop_notifications": "Pemberitahuan Desktop",
-        "lastfmScrobbling": "Scrobble ke Last.fm",
         "listenBrainzScrobbling": "Scrobble ke ListenBrainz",
         "replaygain": "Mode ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -610,8 +603,7 @@
           "none": "Nonaktif",
           "album": "Gunakan Gain Album",
           "track": "Gunakan Gain Lagu"
-        },
-        "lastfmNotConfigured": "API-Key Last.fm belum dikonfigurasi"
+        }
       }
     },
     "albumList": "Album",

@@ -84,7 +84,6 @@ const stylesheet = `
 .audio-lists-panel-mobile .audio-item:not(.audio-lists-panel-sortable-highlight-bg){
 	background: unset
 }
-.lastfm-icon, 
 .musicbrainz-icon{
 	color: #eee
 }

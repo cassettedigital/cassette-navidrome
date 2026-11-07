@@ -485,15 +485,9 @@
     "delete_user_content": "Bu kullanıcıyı ve tüm verilerini (çalma listeleri ve tercihleri dahil) silmek istediğinden emin misin?",
     "notifications_blocked": "Tarayıcınızın ayarlarında bu site için Bildirimleri engellediniz",
     "notifications_not_available": "Bu tarayıcı masaüstü bildirimlerini desteklemiyor veya Navidrome'a ​​\"https://\" üzerinden erişmiyorsunuz",
-    "lastfmLinkSuccess": "Last.fm bağlantısı başarılı ve skroplama etkinleştirildi",
-    "lastfmLinkFailure": "Last.fm'e bağlanılamadı",
-    "lastfmUnlinkSuccess": "Last.fm bağlantısı kaldırıldı ve Skroplama devre dışı bırakıldı",
-    "lastfmUnlinkFailure": "Last.fm bağlantısı kaldırılamadı",
     "openIn": {
-      "lastfm": "Last.fm'de aç",
       "musicbrainz": "MusicBrainz'de aç"
     },
-    "lastfmLink": "Devamını Oku...",
     "listenBrainzLinkSuccess": "ListenBrainz bağlantısı başarılı ve skroplama %{user} tarafından etkinleştirildi",
     "listenBrainzLinkFailure": "ListenBrainz'a bağlanılamadı: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz bağlantısı kaldırıldı ve skroplama devre dışı bırakıldı",
@@ -525,7 +519,6 @@
         "language": "Dil",
         "defaultView": "Varsayılan Görünüm",
         "desktop_notifications": "Masaüstü Bildirimleri",
-        "lastfmScrobbling": "Last.fm'e Skropla",
         "listenBrainzScrobbling": "ListenBrainz'e Skropla",
         "replaygain": "Tekrar Kazanma Modu",
         "preAmp": "Tekrar Kazanım Ön Amplifikatörü (dB)",
@@ -533,8 +526,7 @@
           "none": "Devre dışı",
           "album": "Albüm Kazancını Kullan",
           "track": "Parça Kazancını Kullan"
-        },
-        "lastfmNotConfigured": "Last.fm API Anahtarı yapılandırılmadı\n"
+        }
       }
     },
     "albumList": "Albümler",

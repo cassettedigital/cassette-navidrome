@@ -564,15 +564,9 @@
     "delete_user_content": "Наистина ли желаете да изтриете този потребител и всичките му данни (включително плейлисти и предпочитания)?",
     "notifications_blocked": "В настройките на браузъра сте блокирали известията за този сайт",
     "notifications_not_available": "Този браузър не поддържа известия на работния плот или нямате достъп до Navidrome през https",
-    "lastfmLinkSuccess": "Връзката с Last.fm е успешна! Scrobbling е активиран",
-    "lastfmLinkFailure": "Last.fm не можа да бъде свързан",
-    "lastfmUnlinkSuccess": "Връзката с Last.fm е прекъсната! Scrobbling е деактивиран",
-    "lastfmUnlinkFailure": "Last.fm връзката не можа да бъде премахната",
     "openIn": {
-      "lastfm": "Отвори в Last.fm",
       "musicbrainz": "Отвори в MusicBrainz"
     },
-    "lastfmLink": "Прочетете още...",
     "listenBrainzLinkSuccess": "Връзката с ListenBrainz е успешна! Scrobbling е активиран от името на потребителя: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz не можа да бъде свързан: %{error}",
     "listenBrainzUnlinkSuccess": "Връзката с ListenBrainz е прекъсната! Scrobbling е деактивиран",
@@ -605,7 +599,6 @@
         "language": "Език",
         "defaultView": "Изглед по подразбиране",
         "desktop_notifications": "Известия на работния плот",
-        "lastfmScrobbling": "Scrobble към Last.fm",
         "listenBrainzScrobbling": "Scrobble към ListenBrainz",
         "replaygain": "Режим ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -613,8 +606,7 @@
           "none": "Изключен",
           "album": "Използвай Album Gain",
           "track": "Използвай Track Gain"
-        },
-        "lastfmNotConfigured": "API ключът на Last.fm не е конфигуриран"
+        }
       }
     },
     "albumList": "Албуми",

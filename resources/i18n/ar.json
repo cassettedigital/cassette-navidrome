@@ -353,15 +353,9 @@
         "delete_user_content": "هل أنت متيقِّن من أنك تريد حذف هذا المستخدم وجميع بياناته (بما في ذلك قوائم التشغيل والتفضيلات)؟",
         "notifications_blocked": "قد حظرت الإشعارات لهذا الموقع في إعدادات مستعرضك.",
         "notifications_not_available": "لا يدعم هذا المستعرض إشعارات سطح المكتب أو أنك لا تصل إلى نافيدروم عبر https",
-        "lastfmLinkSuccess": "ربط حساب Last.fm بنجاح وفعل إرسال البيانات.",
-        "lastfmLinkFailure": "حساب Last.fm غير مربوط",
-        "lastfmUnlinkSuccess": "ألغي ربط Last.fm وعطل إرسال البيانات",
-        "lastfmUnlinkFailure": "تعذر فك ارتباط حساب Last.fm",
         "openIn": {
-            "lastfm": "افتح في Last.fm",
             "musicbrainz": "افتح في MusicBrainz"
         },
-        "lastfmLink": "اقرأ المزيد…",
         "listenBrainzLinkSuccess": "ربط حساب ListenBrainz بنجاح ومكّن إرسال البينات باسم المستخدم: %{user}",
         "listenBrainzLinkFailure": "تعذر ربط ListenBrainz : %{error}",
         "listenBrainzUnlinkSuccess": "ألغي ربط ListenBrainz وعطل إرسال البيانات",
@@ -387,7 +381,6 @@
                 "language": "اللغة",
                 "defaultView": "العرض المبدئي",
                 "desktop_notifications": "إخطارات سطح المكتب",
-                "lastfmScrobbling": "أرسل البيانات إلى Last.fm",
                 "listenBrainzScrobbling": "أرسل البيانات إلى ListenBrainz",
                 "replaygain": "نمط رافع الصوت",
                 "preAmp": "تكبير ما قبل رافع الصوت (ديسبل)",

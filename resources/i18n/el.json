@@ -564,15 +564,9 @@
     "delete_user_content": "Είστε σίγουροι πως θέλετε να διαγράψετε αυτό το χρήστη και όλα τα δεδομένα του (συμπεριλαμβανομένων των λιστών αναπαραγωγής και προτιμήσεων)?",
     "notifications_blocked": "Έχετε μπλοκάρει τις Ειδοποιήσεις από τη σελίδα, μέσω των ρυθμίσεων του περιηγητή ιστού σας",
     "notifications_not_available": "Αυτός ο περιηγητής ιστού δεν υποστηρίζει ειδοποιήσεις στην επιφάνεια εργασίας ή δεν έχετε πρόσβαση στο Navidrome μέσω https",
-    "lastfmLinkSuccess": "Το Last.fm έχει διασυνδεθεί επιτυχώς και η λειτουργία scrobbling ενεργοποιήθηκε",
-    "lastfmLinkFailure": "Δεν μπορεί να πραγματοποιηθεί διασύνδεση με το Last.fm",
-    "lastfmUnlinkSuccess": "Το Last.fm αποσυνδέθηκε και η λειτουργία scrobbling έχει απενεργοποιηθεί",
-    "lastfmUnlinkFailure": "Το Last.fm δεν μπορεί να αποσυνδεθεί",
     "openIn": {
-      "lastfm": "Άνοιγμα στο Last.fm",
       "musicbrainz": "Άνοιγμα στο MusicBrainz"
     },
-    "lastfmLink": "Διαβάστε περισσότερα...",
     "listenBrainzLinkSuccess": "Το ListenBrainz έχει διασυνδεθεί επιτυχώς και η λειτουργία scrobbling έχει ενεργοποιηθεί για το χρήστη: %{user}",
     "listenBrainzLinkFailure": "Το ListenBrainz δεν μπορεί να διασυνδεθεί: %{error}",
     "listenBrainzUnlinkSuccess": "Το ListenBrainz έχει αποσυνδεθεί και το scrobbling έχει απενεργοποιηθεί",
@@ -611,7 +605,6 @@
         "language": "Γλώσσα",
         "defaultView": "Προκαθορισμένη προβολή",
         "desktop_notifications": "Ειδοποιήσεις στην Επιφάνεια Εργασίας",
-        "lastfmScrobbling": "Λειτουργία Scrobble στο Last.fm",
         "listenBrainzScrobbling": "Λειτουργία Scrobble στο ListenBrainz",
         "replaygain": "Λειτουργία ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Ανενεργό",
           "album": "Χρησιμοποιήστε το Album Gain",
           "track": "Χρησιμοποιήστε το Track Gain"
-        },
-        "lastfmNotConfigured": "Το Last.fm API-Key δεν έχει ρυθμιστεί"
+        }
       }
     },
     "albumList": "Άλμπουμ",

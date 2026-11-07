@@ -572,18 +572,12 @@
     "remove_all_missing_content": "Biztos, hogy minden hiányzó fájlt törölni akarsz az adatbázisból? Ez minden hozzájuk fűződő referenciát törölni fog, beleértve a lejátszásaikat és értékeléseiket.",
     "notifications_blocked": "A böngésződ beállításaiban letiltottad az értesítéseket erre az oldalra.",
     "notifications_not_available": "Ez a böngésző nem támogatja az asztali értesítéseket, vagy a Navidrome-ot nem https-en keresztül használod.",
-    "lastfmLinkSuccess": "Sikeresen összekapcsolva Last.fm-el és halgatott számok küldése engedélyezve.",
-    "lastfmLinkFailure": "Nem lehet kapcsolódni a Last.fm-hez.",
-    "lastfmUnlinkSuccess": "Last.fm leválasztva és a halgatott számok küldése kikapcsolva.",
-    "lastfmUnlinkFailure": "Nem sikerült leválasztani a Last.fm-et.",
     "openIn": {
-      "lastfm": "Megnyitás Last.fm-ben",
       "musicbrainz": "Megnyitás MusicBrainz-ben"
     },
-    "lastfmLink": "Bővebben...",
     "listenBrainzLinkSuccess": "Sikeresen összekapcsolva ListenBrainz-el. Halgatott számok küldése %{user} felhasználónak engedélyezve.",
     "listenBrainzLinkFailure": "Nem lehet kapcsolódni a Listenbrainz-hez: %{error}",
-    "listenBrainzUnlinkSuccess": "ListenBrainz Last.fm leválasztva és a halgatott számok küldése kikapcsolva.",
+    "listenBrainzUnlinkSuccess": "ListenBrainz leválasztva és a halgatott számok küldése kikapcsolva.",
     "listenBrainzUnlinkFailure": "Nem sikerült leválasztani a ListenBrainz-et.",
     "downloadOriginalFormat": "Letöltés eredeti formátumban",
     "shareOriginalFormat": "Megosztás eredeti formátumban",
@@ -614,7 +608,6 @@
         "language": "Nyelv",
         "defaultView": "Alapértelmezett nézet",
         "desktop_notifications": "Asztali értesítések",
-        "lastfmScrobbling": "Halgatott számok küldése a Last.fm-nek",
         "listenBrainzScrobbling": "Halgatott számok küldése a ListenBrainz-nek",
         "replaygain": "ReplayGain mód",
         "preAmp": "ReplayGain előerősítő (dB)",
@@ -622,8 +615,7 @@
           "none": "Kikapcsolva",
           "album": "Album",
           "track": "Sáv"
-        },
-        "lastfmNotConfigured": "Last.fm API kulcs nincs beállítva"
+        }
       }
     },
     "albumList": "Albumok",

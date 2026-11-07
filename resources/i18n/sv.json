@@ -564,15 +564,9 @@
     "delete_user_content": "Är du säker på att du vill ta bort denna användare (inklusive spellistor och inställningar)?",
     "notifications_blocked": "Du har blockerat meddelanden från denna sajt in din webbläsares inställningar",
     "notifications_not_available": "Denna webbläsare stödjer inte skrivbordsmeddelanden eller du använder inte Navidrome via https",
-    "lastfmLinkSuccess": "Last.fm är länkat och scrobbling är aktivt",
-    "lastfmLinkFailure": "Last.fm kunde inte länkas",
-    "lastfmUnlinkSuccess": "Last.fm är inte längre länkat och scrobbling är deaktiverat",
-    "lastfmUnlinkFailure": "Last.fm kunde inte avlänkas",
     "openIn": {
-      "lastfm": "Öppna i Last.fm",
       "musicbrainz": "Öppna i MusicBrainz"
     },
-    "lastfmLink": "Läs mer...",
     "listenBrainzLinkSuccess": "ListenBrainz är länkat och scrobbling är aktivt som användare: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz kunde inte länkas: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz är inte längre länkat och scrobbling är deaktiverat",
@@ -611,7 +605,6 @@
         "language": "Språk",
         "defaultView": "Standardvy",
         "desktop_notifications": "Skrivbordsmeddelanden",
-        "lastfmScrobbling": "Scrobbla till Last.fm",
         "listenBrainzScrobbling": "Scrobbla till ListenBrainz",
         "replaygain": "ReplayGain-läge",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Inaktiverad",
           "album": "Använd gain för album",
           "track": "Använd gain für låtar"
-        },
-        "lastfmNotConfigured": "Last.fm API-nyckel är inte konfigurerad"
+        }
       }
     },
     "albumList": "Album",

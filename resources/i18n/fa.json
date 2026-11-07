@@ -353,15 +353,9 @@
         "delete_user_content": "آیا مطمئن هستید که می خواهید این کاربر و همه داده های او (از جمله لیست پخش و تنظیمات برگزیده اش) را حذف کنید؟",
         "notifications_blocked": "شما اعلان های این سایت را در تنظیمات مرورگر خود مسدود کرده اید",
         "notifications_not_available": "این مرورگر از اعلان های دسکتاپ پشتیبانی نمی کند یا از طریق https به نوید روم دسترسی ندارید",
-        "lastfmLinkSuccess": "last.fm با موفقیت مرتبط شد و scrobbling فعال شد",
-        "lastfmLinkFailure": "last.fm پیوند داده نشد",
-        "lastfmUnlinkSuccess": "last.fm لغو پیوند شده و scrobbling غیرفعال شده است",
-        "lastfmUnlinkFailure": "پیوند last.fm را نمی توان لغو کرد",
         "openIn": {
-            "lastfm": "بازکردن در Last.fm",
             "musicbrainz": "بازکردن در موزیک براینز"
         },
-        "lastfmLink": "بیشتر بخوانید...",
         "listenBrainzLinkSuccess": "",
         "listenBrainzLinkFailure": "",
         "listenBrainzUnlinkSuccess": "",
@@ -387,7 +381,6 @@
                 "language": "زبان",
                 "defaultView": "نمای پیش فرض",
                 "desktop_notifications": "اعلان های دسکتاپ",
-                "lastfmScrobbling": "اسکروبل به Last.fm",
                 "listenBrainzScrobbling": "",
                 "replaygain": "",
                 "preAmp": "",

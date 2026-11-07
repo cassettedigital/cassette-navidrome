@@ -564,15 +564,9 @@
     "delete_user_content": "Weet je zeker dat je deze gebruiker en al zijn gegevens wilt verwijderen (inclusief afspeellijsten en voorkeuren)?",
     "notifications_blocked": "Je hebt bureaubladmeldingen geblokkeerd voor deze site in je browserinstellingen",
     "notifications_not_available": "Deze browser ondersteunt bureaubladmeldingen niet, of je verbindt niet over https",
-    "lastfmLinkSuccess": "Last.fm succesvol gekoppeld en scrobbling actief",
-    "lastfmLinkFailure": "Last.fm kon niet worden gekoppeld",
-    "lastfmUnlinkSuccess": "Last.fm ontkoppeld en scrobbling uitgezet",
-    "lastfmUnlinkFailure": "Last.fm kon niet worden ontkoppeld",
     "openIn": {
-      "lastfm": "Open in Last.fm",
       "musicbrainz": "Open in MusicBrainz"
     },
-    "lastfmLink": "Lees meer...",
     "listenBrainzLinkSuccess": "ListenBrainz is succesvol gelinkt en scrobbling staat aan, als gebruiker: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz kon niet worden gelinkt: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz ontkoppeld",
@@ -611,7 +605,6 @@
         "language": "Taal",
         "defaultView": "Standaard weergave",
         "desktop_notifications": "Bureaubladmeldingen",
-        "lastfmScrobbling": "Scrobble naar Last.fm",
         "listenBrainzScrobbling": "Scrobble naar ListenBrainz",
         "replaygain": "ReplayGain modus",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Uitgeschakeld",
           "album": "Gebruik Album Gain",
           "track": "Gebruik Track Gain"
-        },
-        "lastfmNotConfigured": "Last.fm API-sleutel is niet geconfigureerd"
+        }
       }
     },
     "albumList": "Albums",

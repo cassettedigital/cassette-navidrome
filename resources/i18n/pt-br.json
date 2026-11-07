@@ -566,15 +566,9 @@
     "delete_user_content": "Você tem certeza que deseja excluir o usuário e todos os seus dados (incluindo suas playlists e preferências)?",
     "notifications_blocked": "Você bloqueou notificações para este site nas configurações do seu browser",
     "notifications_not_available": "Este navegador não suporta notificações",
-    "lastfmLinkSuccess": "Sua conta no Last.fm foi conectada com sucesso",
-    "lastfmLinkFailure": "Sua conta no Last.fm não pode ser conectada",
-    "lastfmUnlinkSuccess": "Sua conta no Last.fm foi desconectada",
-    "lastfmUnlinkFailure": "Sua conta no Last.fm não pode ser desconectada",
     "openIn": {
-      "lastfm": "Abrir em Last.fm",
       "musicbrainz": "Abrir em MusicBrainz"
     },
-    "lastfmLink": "Leia mais",
     "listenBrainzLinkSuccess": "Sua conta no ListenBrainz foi conectada com sucesso",
     "listenBrainzLinkFailure": "Sua conta no ListenBrainz não pode ser conectada",
     "listenBrainzUnlinkSuccess": "Sua conta no ListenBrainz foi desconectada",
@@ -613,7 +607,6 @@
         "language": "Língua",
         "defaultView": "Tela inicial",
         "desktop_notifications": "Notificações",
-        "lastfmScrobbling": "Enviar scrobbles para Last.fm",
         "listenBrainzScrobbling": "Enviar scrobbles para ListenBrainz",
         "replaygain": "Modo ReplayGain",
         "preAmp": "PreAmp ReplayGain (dB)",
@@ -621,8 +614,7 @@
           "none": "Desligado",
           "album": "Usar ganho do álbum",
           "track": "Usar ganho do faixa"
-        },
-        "lastfmNotConfigured": "A API-Key do Last.fm não está configurada"
+        }
       }
     },
     "albumList": "Álbuns",

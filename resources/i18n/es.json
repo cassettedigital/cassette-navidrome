@@ -564,15 +564,9 @@
     "delete_user_content": "¿Esta seguro de eliminar a este usuario y todos sus datos (incluyendo listas y preferencias)?",
     "notifications_blocked": "Las notificaciones de este sitio están bloqueadas en tu navegador",
     "notifications_not_available": "Este navegador no soporta notificaciones o no ingresaste a Navidrome usando https",
-    "lastfmLinkSuccess": "Last.fm esta conectado y el scrobbling esta activado",
-    "lastfmLinkFailure": "No se pudo conectar con Last.fm",
-    "lastfmUnlinkSuccess": "Last.fm se ha desconectado y el scrobbling se desactivo",
-    "lastfmUnlinkFailure": "No se pudo desconectar Last.fm",
     "openIn": {
-      "lastfm": "Ver en Last.fm",
       "musicbrainz": "Ver en MusicBrainz"
     },
-    "lastfmLink": "Leer más...",
     "listenBrainzLinkSuccess": "Se ha conectado correctamente a ListenBrainz y se activó el scrobbling como el usuario: %{user}",
     "listenBrainzLinkFailure": "No se pudo conectar con ListenBrainz: %{error}",
     "listenBrainzUnlinkSuccess": "Se desconectó ListenBrainz y se desactivó el scrobbling",
@@ -611,7 +605,6 @@
         "language": "Idioma",
         "defaultView": "Vista por defecto",
         "desktop_notifications": "Notificaciones de escritorio",
-        "lastfmScrobbling": "Scrobble a Last.fm",
         "listenBrainzScrobbling": "Scrobble a ListenBrainz",
         "replaygain": "Modo de ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Desactivado",
           "album": "Ganancia del álbum",
           "track": "Ganancia de pista"
-        },
-        "lastfmNotConfigured": "La clave API de Last.fm no está configurada"
+        }
       }
     },
     "albumList": "Álbumes",

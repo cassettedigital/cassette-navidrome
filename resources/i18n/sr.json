@@ -397,11 +397,6 @@
     "delete_user_title": "Брисање корисника ’%{name}’",
     "downloadDialogTitle": "Преузимање %{resource} ’%{name}’ (%{size})",
     "downloadOriginalFormat": "Преузми у оригиналном формату",
-    "lastfmLink": "Прочитај још...",
-    "lastfmLinkFailure": "Last.fm није могао да се повеже",
-    "lastfmLinkSuccess": "Last.fm је успешно повезан и укључено је скробловање",
-    "lastfmUnlinkFailure": "Није могла да се уклони веза са Last.fm",
-    "lastfmUnlinkSuccess": "Last.fm више није повезан и скробловање је искључено",
     "listenBrainzLinkFailure": "ListenBrainz није могао да се повеже: %{error}",
     "listenBrainzLinkSuccess": "ListenBrainz је успешно повезан и скробловање је укључено као корисник: %{user}",
     "listenBrainzUnlinkFailure": "Није могла да се уклони веза са ListenBrainz",
@@ -411,7 +406,6 @@
     "notifications_blocked": "У подешавањима интернет прегледача за овај сајт, блокирали сте обавештења",
     "notifications_not_available": "Овај интернет прегледач не подржава десктоп обавештења, или Navidrome серверу не приступате преко https протокола",
     "openIn": {
-      "lastfm": "Отвори у Last.fm",
       "musicbrainz": "Отвори у MusicBrainz"
     },
     "remove_missing_content": "Да ли сте сигурни да из базе података желите да уклоните фајлове који недостају? Ово ће трајно да уклони све референце на њих, укључујући број пуштања и рангирања.",
@@ -441,8 +435,6 @@
           "track": "Користи Track појачање"
         },
         "language": "Језик",
-        "lastfmNotConfigured": "Није подешен Last.fm API-кључ",
-        "lastfmScrobbling": "Скроблуј на Last.fm",
         "listenBrainzScrobbling": "Скроблуј на ListenBrainz",
         "preAmp": "ReplayGain претпојачање (dB)",
         "replaygain": "ReplayGain режим",

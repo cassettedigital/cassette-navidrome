@@ -327,7 +327,7 @@ describe('configToToml', () => {
         Port: 4533,
         EnableDownloads: true,
         DevLogSourceLine: false,
-        LastFM: {
+        Integration: {
           Enabled: true,
           ApiKey: 'secret123',
           Language: 'en',
@@ -351,7 +351,7 @@ describe('configToToml', () => {
     expect(result).toContain('DevLogSourceLine = false')
 
     // Should contain sections
-    expect(result).toContain('[LastFM]')
+    expect(result).toContain('[Integration]')
     expect(result).toContain('Enabled = true')
     expect(result).toContain('ApiKey = "secret123"')
     expect(result).toContain('Language = "en"')
@@ -415,7 +415,7 @@ describe('flattenConfig', () => {
       Address: '0.0.0.0',
       Port: 4533,
       EnableDownloads: true,
-      LastFM: {
+      Integration: {
         Enabled: true,
         ApiKey: 'secret123',
         Language: 'en',
@@ -443,20 +443,20 @@ describe('flattenConfig', () => {
     })
 
     expect(result).toContainEqual({
-      key: 'LastFM.Enabled',
-      envVar: 'ND_LASTFM_ENABLED',
+      key: 'Integration.Enabled',
+      envVar: 'ND_INTEGRATION_ENABLED',
       value: 'true',
     })
 
     expect(result).toContainEqual({
-      key: 'LastFM.ApiKey',
-      envVar: 'ND_LASTFM_APIKEY',
+      key: 'Integration.ApiKey',
+      envVar: 'ND_INTEGRATION_APIKEY',
       value: 'secret123',
     })
 
     expect(result).toContainEqual({
-      key: 'LastFM.Language',
-      envVar: 'ND_LASTFM_LANGUAGE',
+      key: 'Integration.Language',
+      envVar: 'ND_INTEGRATION_LANGUAGE',
       value: 'en',
     })
   })
@@ -596,7 +596,7 @@ describe('separateAndSortConfigs', () => {
       Port: 4533,
       DevAutoLoginUsername: 'testuser',
       DevLogSourceLine: true,
-      LastFM: {
+      Integration: {
         Enabled: true,
         ApiKey: 'secret123',
       },
@@ -606,8 +606,16 @@ describe('separateAndSortConfigs', () => {
 
     expect(result.regularConfigs).toEqual([
       { key: 'Address', envVar: 'ND_ADDRESS', value: '127.0.0.1' },
-      { key: 'LastFM.ApiKey', envVar: 'ND_LASTFM_APIKEY', value: 'secret123' },
-      { key: 'LastFM.Enabled', envVar: 'ND_LASTFM_ENABLED', value: 'true' },
+      {
+        key: 'Integration.ApiKey',
+        envVar: 'ND_INTEGRATION_APIKEY',
+        value: 'secret123',
+      },
+      {
+        key: 'Integration.Enabled',
+        envVar: 'ND_INTEGRATION_ENABLED',
+        value: 'true',
+      },
       { key: 'Port', envVar: 'ND_PORT', value: '4533' },
     ])
 

@@ -36,7 +36,11 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
-    sourcemap: true,
+    // Cassette fork: no source maps. The build is embedded in the binary, and a
+    // map carries the full source of every library it touches (one icon pack's
+    // map alone names services Cassette must not ship). The web UI is never
+    // served to people (Patch 006), so the maps were only dead weight.
+    sourcemap: false,
   },
   test: {
     globals: true,

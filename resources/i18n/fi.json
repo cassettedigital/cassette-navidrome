@@ -564,15 +564,9 @@
     "delete_user_content": "Haluatko varmasti poistaa tämän käyttäjän ja kaikki hänen tiedot (mukaan lukien soittolistat ja asetukset)?",
     "notifications_blocked": "Olet estänyt tämän sivuston ilmoitukset selaimesi asetuksissa",
     "notifications_not_available": "Tämä selain ei tue työpöytäilmoituksia tai et käytä Navidromea https-yhteyden kautta",
-    "lastfmLinkSuccess": "Last.fm onnistuneesti linkitetty ja kuuntelutottumus otettu käyttöön",
-    "lastfmLinkFailure": "Last.fm linkitys epäonnistui",
-    "lastfmUnlinkSuccess": "Last.fm linkitys poistettu ja kuuntelutottumus poistettu käytöstä",
-    "lastfmUnlinkFailure": "Last.fm linkityksen poisto epäonnistui",
     "openIn": {
-      "lastfm": "Avaa Last.fm:ssä",
       "musicbrainz": "Avaa MusicBrainz:ssä"
     },
-    "lastfmLink": "Lue lisää...",
     "listenBrainzLinkSuccess": "ListenBrainz linkitetty onnistuneesti ja käyttäjän %{user} kuuntelutottumus otettu käyttöön",
     "listenBrainzLinkFailure": "Ei voitu linkittää ListenBrainz palveluun: %{error}",
     "listenBrainzUnlinkSuccess": "Linkitys ListenBrainz poistettu ja kuuntelutottumus poistettu käytöstä",
@@ -611,7 +605,6 @@
         "language": "Kieli",
         "defaultView": "Oletusnäkymä",
         "desktop_notifications": "Työpöytäilmoitukset",
-        "lastfmScrobbling": "Kuuntelutottumuksen lähetys Last.fm-palveluun",
         "listenBrainzScrobbling": "Kuuntelutottumuksen lähetys ListenBrainz-palveluun",
         "replaygain": "ReplayGain -tila",
         "preAmp": "ReplayGain esivahvistus (dB)",
@@ -619,8 +612,7 @@
           "none": "Pois käytöstä",
           "album": "Käytä albumin äänen normalisointia",
           "track": "Käytä kappaleen äänen normalisointia"
-        },
-        "lastfmNotConfigured": "Last.fm API-avainta ei ole määritetty"
+        }
       }
     },
     "albumList": "Albumit",

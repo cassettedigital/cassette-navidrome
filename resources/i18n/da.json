@@ -564,15 +564,9 @@
     "delete_user_content": "Er du sikker på at du vil slette denne bruger og tilhørende data (inklusive afspilningslister og valgte indstillinger)?",
     "notifications_blocked": "Du blokerer for notifikationer fra dette site i dine browserindstillinger",
     "notifications_not_available": "Denne browser understøtter ikke skrivebordsnotifikationer, eller: Du tilgår ikke Navidrome over https",
-    "lastfmLinkSuccess": "Du er koblet til Last.fm, og scrobbling er slået til",
-    "lastfmLinkFailure": "Du kan ikke kobles til Last.fm",
-    "lastfmUnlinkSuccess": "Last.fm frakoblet, og scrobbling deaktiveret",
-    "lastfmUnlinkFailure": "Last.fm kunne ikke frakobles",
     "openIn": {
-      "lastfm": "Åbn i Last.fm",
       "musicbrainz": "Åbn i MusicBrainz"
     },
-    "lastfmLink": "Læs mere...",
     "listenBrainzLinkSuccess": "Du er koblet til ListenBrainz og scrobbling er aktiveret som bruger: %{user}",
     "listenBrainzLinkFailure": "Du kunne ikke kobles til ListenBrainz: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz er frakoblet, og scrobbling deaktiveret",
@@ -611,7 +605,6 @@
         "language": "Sprog",
         "defaultView": "Standardopsætning",
         "desktop_notifications": "Skrivebordsnotifikationer",
-        "lastfmScrobbling": "Scrobble til Last.fm",
         "listenBrainzScrobbling": "Scrobble til ListenBrainz",
         "replaygain": "ReplayGain-tilstand",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -619,8 +612,7 @@
           "none": "Slået fra",
           "album": "Brug Album Gain",
           "track": "Brug Gain for spor"
-        },
-        "lastfmNotConfigured": "Last.fm API-nøglen er ikke konfigureret"
+        }
       }
     },
     "albumList": "Albums",

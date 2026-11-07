@@ -564,15 +564,9 @@
     "delete_user_content": "คุณแน่ใจที่จะลบชื่อผู้ใช้นี้และข้อมูลทั้งหมด (รวมถึงเพลย์ลิสต์และการตั้งค่าต่างๆ)?",
     "notifications_blocked": "คุณบล็อกการแจ้งเตือนสำหรับเว็บไซต์นี้",
     "notifications_not_available": "เบราเซอร์นี้ไม่รองรับการแจ้งเตือน Desktop หรือคุณไม่ได้เข้าถึง Navidrome ผ่าน https",
-    "lastfmLinkSuccess": "เชื่อมต่อ Last.fm สำเร็จและเปิดการ Scrobble",
-    "lastfmLinkFailure": "ไม่สามารถเชื่อมต่อ Last.fm ได้",
-    "lastfmUnlinkSuccess": "ยกเลิกการเชื่อมต่อ Last.fm สำเร็จและปิดการ Scrobble แล้ว",
-    "lastfmUnlinkFailure": "ไม่สามารถยกเลิกการเชิ่อมต่อกับ Last.fm ได้",
     "openIn": {
-      "lastfm": "เปิดใน Last.fm",
       "musicbrainz": "เปิดใน MusicBrainz"
     },
-    "lastfmLink": "อ่านต่อ...",
     "listenBrainzLinkSuccess": "เชื่อมต่อ ListenBrainz สำเร็จ และสามารถใช้ Scrobbling ได้ผ่านชื่อผู้ใช้ %{user}",
     "listenBrainzLinkFailure": "ไม่สามารถเชื่อมต่อ ListenBrainz ได้: %{error}",
     "listenBrainzUnlinkSuccess": "ยกเลิกเชื่อมต่อ ListenBrainz และ scrobbling ใช้งานไม่ได้",
@@ -605,7 +599,6 @@
         "language": "ภาษา",
         "defaultView": "หน้าเริ่มต้น",
         "desktop_notifications": "การแจ่งเตือน Desktop",
-        "lastfmScrobbling": "Scrobble ไปยัง Last.fm",
         "listenBrainzScrobbling": "Scrobble ไปยัง ListenBrainz",
         "replaygain": "โหมด ReplayGain",
         "preAmp": "ReplayGain PreAmp (dB)",
@@ -613,8 +606,7 @@
           "none": "ปิดการใช้งาน",
           "album": "ใช้อัลบั้ม Gain",
           "track": "ใช้แทรค Gain"
-        },
-        "lastfmNotConfigured": "ยังไม่ได้ตั้งค่า Last.fm API-Key"
+        }
       }
     },
     "albumList": "อัลบั้ม",

@@ -564,15 +564,9 @@
     "delete_user_content": "Segur que voleu eliminar aquest usuari i les seues dades\n(incloent-hi llistes i preferències)",
     "notifications_blocked": "Heu blocat les notificacions d'escriptori en les preferències del navegador",
     "notifications_not_available": "El navegador no és compatible amb les notificacions o no us heu connectat a Navidrome per https",
-    "lastfmLinkSuccess": "Ha reexit la vinculació amb Last.fm i se n'ha activat el seguiment",
-    "lastfmLinkFailure": "No ha estat possible la vinculació amb Last.fm",
-    "lastfmUnlinkSuccess": "Desvinculat de Last.fm i desactivat el seguiment",
-    "lastfmUnlinkFailure": "No s'ha pogut desvincular de Last.fm",
     "openIn": {
-      "lastfm": "Obri en Last.fm",
       "musicbrainz": "Obri en MusicBrainz"
     },
-    "lastfmLink": "Llegeix més...",
     "listenBrainzLinkSuccess": "Connectat correctament a ListenBrainz i seguiment activat com a: %{user}",
     "listenBrainzLinkFailure": "No s'ha pogut connectar a ListenBrainz: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz desconnectat i seguiment desactivat",
@@ -605,7 +599,6 @@
         "language": "Llengua",
         "defaultView": "Vista per defecte",
         "desktop_notifications": "Notificacions d'escriptori",
-        "lastfmScrobbling": "Activa el seguiment de Last.fm",
         "listenBrainzScrobbling": "Activa el seguiment de ListenBrainz",
         "replaygain": "Mode ReplayGain",
         "preAmp": "PreAmp de ReplayGain (dB)",
@@ -613,8 +606,7 @@
           "none": "Cap",
           "album": "Guany de l'àlbum",
           "track": "Guany de la pista"
-        },
-        "lastfmNotConfigured": "No s'ha configurat l'API de Last.fm"
+        }
       }
     },
     "albumList": "Àlbums",

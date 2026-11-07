@@ -5,7 +5,6 @@ import { SelectLanguage } from './SelectLanguage'
 import { SelectTheme } from './SelectTheme'
 import { SelectDefaultView } from './SelectDefaultView'
 import { NotificationsToggle } from './NotificationsToggle'
-import { LastfmScrobbleToggle } from './LastfmScrobbleToggle'
 import { ListenBrainzScrobbleToggle } from './ListenBrainzScrobbleToggle'
 import config from '../config'
 import { ReplayGainToggle } from './ReplayGainToggle'
@@ -27,7 +26,6 @@ const Personal = () => {
         <SelectDefaultView />
         {config.enableReplayGain && <ReplayGainToggle />}
         <NotificationsToggle />
-        {config.lastFMEnabled && <LastfmScrobbleToggle />}
         {config.listenBrainzEnabled && <ListenBrainzScrobbleToggle />}
       </SimpleForm>
     </Card>

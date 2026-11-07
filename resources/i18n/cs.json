@@ -353,15 +353,9 @@
         "delete_user_content": "Jste si jisti že chcete odstranit tohoto uživatele a všechny jejich data (zahrujicí seznamy skladeb a nastavení)?",
         "notifications_blocked": "Zablokovali jste si oznámení pro tuto stránku v nastavení vašeho prohlížeče",
         "notifications_not_available": "Tento prohlížeč nepodporuje oznámení na ploše nebo nepřistupujete k Navidrome přes https",
-        "lastfmLinkSuccess": "Last.fm úspěšně připojeno a scrobblování zapnuto",
-        "lastfmLinkFailure": "Last.fm nemohlo být připojeno",
-        "lastfmUnlinkSuccess": "Last.fm odpojeno a scrobblování vypnuto",
-        "lastfmUnlinkFailure": "Last.fm nemohlo být odpojeno",
         "openIn": {
-            "lastfm": "Otevřít na Last.fm",
             "musicbrainz": "Otevřít na MusicBrainz"
         },
-        "lastfmLink": "Číst dále...",
         "listenBrainzLinkSuccess": "ListenBrainz úspěšně připojeno a scrobblování zapnuto jako uživatel: %{user}",
         "listenBrainzLinkFailure": "ListenBrainz nemohlo být připojeno: %{error}",
         "listenBrainzUnlinkSuccess": "ListenBrainz odpojeno a scrobblování vypnuto",
@@ -387,7 +381,6 @@
                 "language": "Jazyk",
                 "defaultView": "Výchozí stránka",
                 "desktop_notifications": "Oznámení na ploše",
-                "lastfmScrobbling": "Scrobblovat na Last.fm",
                 "listenBrainzScrobbling": "Scrobblovat na ListenBrainz",
                 "replaygain": "Mód ReplayGain",
                 "preAmp": "ReplayGain PreAmp (dB)",

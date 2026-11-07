@@ -480,15 +480,9 @@
     "delete_user_content": "Da li zaista želiš obrisati ovog korisnika i sve njegove podatke (uključujući playliste i postavke)?",
     "notifications_blocked": "Blokirali ste obavijesti za ovu stranicu u postavkama preglednika",
     "notifications_not_available": "Ovaj preglednik ne podržava desktop obavijesti",
-    "lastfmLinkSuccess": "Last.fm veza uspostavljena i scrobbling omogućen",
-    "lastfmLinkFailure": "Last.fm veza nije uspjela",
-    "lastfmUnlinkSuccess": "Last.fm veza uklonjena i scrobbling onemogućen",
-    "lastfmUnlinkFailure": "Last.fm veza nije uklonjena",
     "openIn": {
-      "lastfm": "Prikaži na Last.fm",
       "musicbrainz": "Prikaži na MusicBrainz"
     },
-    "lastfmLink": "Pročitaj više",
     "listenBrainzLinkSuccess": "ListenBrainz veza uspostavljena i scrobbling omogućen kao korisnik: %{user}",
     "listenBrainzLinkFailure": "ListenBrainz veza nije uspjela: %{error}",
     "listenBrainzUnlinkSuccess": "ListenBrainz veza uklonjena i scrobbling onemogućen",
@@ -520,7 +514,6 @@
         "language": "Jezik",
         "defaultView": "Zadani pregled",
         "desktop_notifications": "Desktop obavijesti",
-        "lastfmScrobbling": "Last.fm scrobbling",
         "listenBrainzScrobbling": "ListenBrainz scrobbling",
         "replaygain": "ReplayGain mod",
         "preAmp": "ReplayGain pojačanje (dB)",
@@ -528,8 +521,7 @@
           "none": "Isključeno",
           "album": "Koristi album gain",
           "track": "Koristi pjesmu gain"
-        },
-        "lastfmNotConfigured": "Last.fm API ključ nije konfiguriran"
+        }
       }
     },
     "albumList": "Albumi",
