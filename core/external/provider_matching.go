@@ -18,7 +18,7 @@ import (
 //
 // # Algorithm Overview
 //
-// The algorithm matches songs from external agents (Last.fm, Deezer, etc.) to tracks in the
+// The algorithm matches songs from external agents (ListenBrainz, plugins, etc.) to tracks in the
 // local music library using four matching strategies in priority order:
 //
 //  1. Direct ID match: Songs with an ID field are matched directly to MediaFiles by ID

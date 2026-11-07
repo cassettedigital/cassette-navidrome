@@ -16,10 +16,8 @@ import (
 // using partial masking (first and last character visible, middle replaced with *).
 // For values with 7+ characters: "secretvalue123" becomes "s***********3"
 // For values with <7 characters: "short" becomes "****"
-// Add field paths using dot notation (e.g., "LastFM.ApiKey")
+// Add field paths using dot notation (e.g., "Prometheus.MetricsPath")
 var sensitiveFieldsPartialMask = []string{
-	"LastFM.ApiKey",
-	"LastFM.Secret",
 	"Prometheus.MetricsPath",
 	"DevAutoLoginUsername",
 }

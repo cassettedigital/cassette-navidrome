@@ -31,7 +31,7 @@ Enable plugins in your `navidrome.toml`:
 Enabled = true
 
 # Add the plugin to your agents list
-Agents = "lastfm,spotify,minimal"
+Agents = "listenbrainz,spotify,minimal"
 ```
 
 ## What This Example Demonstrates

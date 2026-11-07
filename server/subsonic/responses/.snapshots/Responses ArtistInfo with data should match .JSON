@@ -5,12 +5,11 @@
   "serverVersion": "v0.55.0",
   "openSubsonic": true,
   "artistInfo": {
-    "biography": "Black Sabbath is an English \u003ca target='_blank' href=\"https://www.last.fm/tag/heavy%20metal\" class=\"bbcode_tag\" rel=\"tag\"\u003eheavy metal\u003c/a\u003e band",
+    "biography": "Black Sabbath is an English \u003ca target='_blank' href=\"https://www.example.com/tag/heavy%20metal\" class=\"bbcode_tag\" rel=\"tag\"\u003eheavy metal\u003c/a\u003e band",
     "musicBrainzId": "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
-    "lastFmUrl": "https://www.last.fm/music/Black+Sabbath",
-    "smallImageUrl": "https://userserve-ak.last.fm/serve/64/27904353.jpg",
-    "mediumImageUrl": "https://userserve-ak.last.fm/serve/126/27904353.jpg",
-    "largeImageUrl": "https://userserve-ak.last.fm/serve/_/27904353/Black+Sabbath+sabbath+1970.jpg",
+    "smallImageUrl": "https://images.example.com/serve/64/27904353.jpg",
+    "mediumImageUrl": "https://images.example.com/serve/126/27904353.jpg",
+    "largeImageUrl": "https://images.example.com/serve/_/27904353/Black+Sabbath+sabbath+1970.jpg",
     "similarArtist": [
       {
         "id": "22",

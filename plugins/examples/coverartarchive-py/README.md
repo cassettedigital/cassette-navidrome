@@ -46,7 +46,7 @@ zip -j coverartarchive-py.ndp manifest.json plugin.wasm
 
 3. Add to your agents list:
    ```toml
-   Agents = "coverartarchive-py,spotify,lastfm"
+   Agents = "coverartarchive-py,spotify,listenbrainz"
    ```
 
 ## Testing

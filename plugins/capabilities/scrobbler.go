@@ -1,7 +1,7 @@
 package capabilities
 
 // Scrobbler provides scrobbling functionality to external services.
-// This capability allows plugins to submit listening history to services like Last.fm,
+// This capability allows plugins to submit listening history to services like
 // ListenBrainz, or custom scrobbling backends.
 //
 // All methods are required - plugins implementing this capability must provide

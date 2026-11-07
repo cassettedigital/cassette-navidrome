@@ -83,7 +83,7 @@ extism call wikimedia.wasm nd_get_artist_biography --wasi \
    ```
 3. For metadata agents, add to your agents list:
    ```toml
-   Agents = "lastfm,spotify,wikimedia"
+   Agents = "listenbrainz,spotify,wikimedia"
    ```
 
 ## Creating Your Own Plugin

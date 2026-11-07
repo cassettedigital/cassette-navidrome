@@ -110,8 +110,6 @@ type configOptions struct {
 	PID                             pidOptions          `json:",omitzero"`
 	Inspect                         inspectOptions      `json:",omitzero"`
 	Subsonic                        subsonicOptions     `json:",omitzero"`
-	LastFM                          lastfmOptions       `json:",omitzero"`
-	Deezer                          deezerOptions       `json:",omitzero"`
 	ListenBrainz                    listenBrainzOptions `json:",omitzero"`
 	EnableScrobbleHistory           bool
 	Tags                            map[string]TagConf `json:",omitempty"`
@@ -178,25 +176,6 @@ type TagConf struct {
 	MaxLength int      `yaml:"maxLength" json:",omitempty"`
 	Split     []string `yaml:"split" json:",omitempty"`
 	Album     bool     `yaml:"album" json:",omitempty"`
-}
-
-type lastfmOptions struct {
-	Enabled                 bool
-	ApiKey                  string //nolint:gosec
-	Secret                  string //nolint:gosec
-	Language                string
-	ScrobbleFirstArtistOnly bool
-
-	// Computed values
-	Languages []string // Computed from Language, split by comma
-}
-
-type deezerOptions struct {
-	Enabled  bool
-	Language string
-
-	// Computed values
-	Languages []string // Computed from Language, split by comma
 }
 
 type listenBrainzOptions struct {
@@ -410,12 +389,6 @@ func Load(noConfigDump bool) {
 	Server.PID.Album = cmp.Or(Server.PID.Album, consts.DefaultAlbumPID)
 	Server.PID.Track = cmp.Or(Server.PID.Track, consts.DefaultTrackPID)
 
-	// Parse LastFM.Language into Languages slice (comma-separated, with fallback to DefaultInfoLanguage)
-	Server.LastFM.Languages = parseLanguages(Server.LastFM.Language)
-
-	// Parse Deezer.Language into Languages slice (comma-separated, with fallback to DefaultInfoLanguage)
-	Server.Deezer.Languages = parseLanguages(Server.Deezer.Language)
-
 	// Deprecated options
 	logDeprecatedOptions("Scanner.GenreSeparators", "")
 	logDeprecatedOptions("Scanner.GroupAlbumReleases", "")
@@ -540,8 +513,6 @@ func disableExternalServices() {
 	log.Info("All external integrations are DISABLED!")
 	Server.EnableInsightsCollector = false
 	Server.EnableM3UExternalAlbumArt = false
-	Server.LastFM.Enabled = false
-	Server.Deezer.Enabled = false
 	Server.ListenBrainz.Enabled = false
 	Server.Agents = ""
 	if Server.UILoginBackgroundURL == consts.DefaultUILoginBackgroundURL {
@@ -557,22 +528,6 @@ func validatePlaylistsPath() error {
 		}
 	}
 	return nil
-}
-
-// parseLanguages parses a comma-separated language string into a slice.
-// It trims whitespace from each entry and ensures at least [DefaultInfoLanguage] is returned.
-func parseLanguages(lang string) []string {
-	var languages []string
-	for l := range strings.SplitSeq(lang, ",") {
-		l = strings.TrimSpace(l)
-		if l != "" {
-			languages = append(languages, l)
-		}
-	}
-	if len(languages) == 0 {
-		return []string{consts.DefaultInfoLanguage}
-	}
-	return languages
 }
 
 func validatePurgeMissingOption() error {
@@ -725,13 +680,15 @@ func setViperDefaults() {
 	viper.SetDefault("ffmpegpath", "")
 	viper.SetDefault("mpvpath", "")
 	viper.SetDefault("mpvcmdtemplate", "mpv --audio-device=%d --no-audio-display %f --input-ipc-server=%s")
-	viper.SetDefault("coverartpriority", "cover.*, folder.*, front.*, embedded, external")
+	// cassette: dropped "external" - album covers come from the person's own
+	// files, never from an outside agent.
+	viper.SetDefault("coverartpriority", "cover.*, folder.*, front.*, embedded")
 	viper.SetDefault("coverartquality", 75)
 	viper.SetDefault("enablewebpencoding", false)
 	// cassette: dropped "external" — Cassette supplies open-license (Wikidata/
 	// Commons → R2) artist imagery via its own sync, so Navidrome must not serve
 	// external-agent artist images. This also stops it from serving any STALE
-	// cached URL still sitting in artist.*_image_url from a prior Deezer run.
+	// cached URL still sitting in artist.*_image_url from an earlier outside agent.
 	viper.SetDefault("artistartpriority", "artist.*, album/artist.*")
 	viper.SetDefault("artistimagefolder", "")
 	viper.SetDefault("discartpriority", "disc*.*, cd*.*, cover.*, folder.*, front.*, discsubtitle, embedded")
@@ -791,18 +748,9 @@ func setViperDefaults() {
 	viper.SetDefault("subsonic.enableaveragerating", true)
 	viper.SetDefault("subsonic.legacyclients", "DSub")
 	viper.SetDefault("subsonic.minimalclients", "SubMusic")
-	// cassette: removed "deezer" — no license to serve Deezer artist imagery.
-	viper.SetDefault("agents", "lastfm,listenbrainz")
-	viper.SetDefault("lastfm.enabled", true)
-	viper.SetDefault("lastfm.language", consts.DefaultInfoLanguage)
-	viper.SetDefault("lastfm.apikey", "")
-	viper.SetDefault("lastfm.secret", "")
-	viper.SetDefault("lastfm.scrobblefirstartistonly", false)
-	// cassette: Deezer agent hard-disabled (it was silently serving unlicensed
-	// artist images); with this false the init hook never registers the agent,
-	// so even a stray ND_AGENTS=deezer can't reactivate it.
-	viper.SetDefault("deezer.enabled", false)
-	viper.SetDefault("deezer.language", consts.DefaultInfoLanguage)
+	// cassette: the two commercially unlicensed metadata agents are removed
+	// from the fork entirely (code, options and UI), not merely switched off.
+	viper.SetDefault("agents", "listenbrainz")
 	viper.SetDefault("listenbrainz.enabled", true)
 	viper.SetDefault("listenbrainz.baseurl", consts.DefaultListenBrainzBaseURL)
 	viper.SetDefault("listenbrainz.artistalgorithm", consts.DefaultListenBrainzArtistAlgorithm)

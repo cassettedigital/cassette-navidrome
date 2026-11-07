@@ -8,6 +8,5 @@ type ArtistInfo struct {
 	SmallImageUrl  string
 	MediumImageUrl string
 	LargeImageUrl  string
-	LastFMUrl      string
 	SimilarArtists Artists
 }

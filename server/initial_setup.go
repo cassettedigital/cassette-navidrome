@@ -83,12 +83,6 @@ func checkFFmpegInstallation() {
 
 func checkExternalCredentials() {
 	if conf.Server.EnableExternalServices {
-		if !conf.Server.LastFM.Enabled {
-			log.Info("Last.fm integration is DISABLED")
-		} else {
-			log.Debug("Last.fm integration is ENABLED")
-		}
-
 		if !conf.Server.ListenBrainz.Enabled {
 			log.Info("ListenBrainz integration is DISABLED")
 		} else {

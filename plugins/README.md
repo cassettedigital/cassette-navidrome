@@ -207,7 +207,7 @@ func ndGetArtistBiography() int32 {
 To use the plugin as a metadata agent, add it to your config:
 
 ```toml
-Agents = "lastfm,spotify,my-plugin"
+Agents = "listenbrainz,spotify,my-plugin"
 ```
 
 ### Scrobbler

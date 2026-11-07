@@ -77,7 +77,7 @@ var _ = Describe("Config API", func() {
 			})
 
 			It("redacts sensitive fields", func() {
-				conf.Server.LastFM.ApiKey = "secretapikey123"
+				conf.Server.Prometheus.MetricsPath = "secretapikey123"
 				conf.Server.PasswordEncryptionKey = "encryptionkey789"
 				conf.Server.DevAutoCreateAdminPassword = "adminpassword123"
 				conf.Server.Prometheus.Password = "prometheuspass"
@@ -91,10 +91,10 @@ var _ = Describe("Config API", func() {
 				var resp configResponse
 				Expect(json.Unmarshal(w.Body.Bytes(), &resp)).To(Succeed())
 
-				// Check LastFM.ApiKey (partially masked)
-				lastfm, ok := resp.Config["LastFM"].(map[string]any)
+				// Check Prometheus.MetricsPath (partially masked)
+				prometheus, ok := resp.Config["Prometheus"].(map[string]any)
 				Expect(ok).To(BeTrue())
-				Expect(lastfm["ApiKey"]).To(Equal("s*************3"))
+				Expect(prometheus["MetricsPath"]).To(Equal("s*************3"))
 
 				// Check PasswordEncryptionKey (fully masked)
 				Expect(resp.Config["PasswordEncryptionKey"]).To(Equal("****"))
@@ -103,13 +103,13 @@ var _ = Describe("Config API", func() {
 				Expect(resp.Config["DevAutoCreateAdminPassword"]).To(Equal("****"))
 
 				// Check Prometheus.Password (fully masked)
-				prometheus, ok := resp.Config["Prometheus"].(map[string]any)
-				Expect(ok).To(BeTrue())
 				Expect(prometheus["Password"]).To(Equal("****"))
 			})
 
 			It("handles empty sensitive values", func() {
-				conf.Server.LastFM.ApiKey = ""
+				// Enabled keeps the Prometheus section from being omitted as all-zero.
+				conf.Server.Prometheus.Enabled = true
+				conf.Server.Prometheus.MetricsPath = ""
 				conf.Server.PasswordEncryptionKey = ""
 
 				req := createAuthenticatedConfigRequest(adminToken)
@@ -121,10 +121,10 @@ var _ = Describe("Config API", func() {
 				var resp configResponse
 				Expect(json.Unmarshal(w.Body.Bytes(), &resp)).To(Succeed())
 
-				// Check LastFM.ApiKey - should be preserved because it's sensitive
-				lastfm, ok := resp.Config["LastFM"].(map[string]any)
+				// Check Prometheus.MetricsPath - should be preserved because it's sensitive
+				prometheus, ok := resp.Config["Prometheus"].(map[string]any)
 				Expect(ok).To(BeTrue())
-				Expect(lastfm["ApiKey"]).To(Equal(""))
+				Expect(prometheus["MetricsPath"]).To(Equal(""))
 
 				// Empty sensitive values should remain empty - should be preserved because it's sensitive
 				Expect(resp.Config["PasswordEncryptionKey"]).To(Equal(""))
@@ -165,7 +165,7 @@ var _ = Describe("Config API", func() {
 
 var _ = Describe("redactValue function", func() {
 	It("partially masks long sensitive values", func() {
-		Expect(redactValue("LastFM.ApiKey", "ba46f0e84a")).To(Equal("b********a"))
+		Expect(redactValue("Prometheus.MetricsPath", "ba46f0e84a")).To(Equal("b********a"))
 	})
 
 	It("fully masks long sensitive values that should be completely hidden", func() {
@@ -175,7 +175,7 @@ var _ = Describe("redactValue function", func() {
 	})
 
 	It("fully masks short sensitive values", func() {
-		Expect(redactValue("LastFM.Secret", "short")).To(Equal("****"))
+		Expect(redactValue("Prometheus.MetricsPath", "short")).To(Equal("****"))
 		Expect(redactValue("PasswordEncryptionKey", "12345")).To(Equal("****"))
 		Expect(redactValue("DevAutoCreateAdminPassword", "short")).To(Equal("****"))
 		Expect(redactValue("Prometheus.Password", "short")).To(Equal("****"))
@@ -188,14 +188,14 @@ var _ = Describe("redactValue function", func() {
 	})
 
 	It("handles empty values", func() {
-		Expect(redactValue("LastFM.ApiKey", "")).To(Equal(""))
+		Expect(redactValue("Prometheus.MetricsPath", "")).To(Equal(""))
 		Expect(redactValue("NonSensitive", "")).To(Equal(""))
 	})
 
 	It("handles edge case values", func() {
-		Expect(redactValue("LastFM.ApiKey", "a")).To(Equal("****"))
-		Expect(redactValue("LastFM.ApiKey", "ab")).To(Equal("****"))
-		Expect(redactValue("LastFM.ApiKey", "abcdefg")).To(Equal("a*****g"))
+		Expect(redactValue("Prometheus.MetricsPath", "a")).To(Equal("****"))
+		Expect(redactValue("Prometheus.MetricsPath", "ab")).To(Equal("****"))
+		Expect(redactValue("Prometheus.MetricsPath", "abcdefg")).To(Equal("a*****g"))
 	})
 })
 

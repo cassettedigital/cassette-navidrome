@@ -23,9 +23,7 @@ import (
 	"golang.org/x/sync/errgroup"
 
 	// Import adapters to register them
-	_ "github.com/navidrome/navidrome/adapters/deezer"
 	_ "github.com/navidrome/navidrome/adapters/gotaglib"
-	_ "github.com/navidrome/navidrome/adapters/lastfm"
 	_ "github.com/navidrome/navidrome/adapters/listenbrainz"
 	// Cassette (native build): drop the CGO "legacy-taglib" extractor so the
 	// native/.app build needs no libtag/pkg-config and bundles no taglib dylib.
@@ -124,9 +122,6 @@ func startServer(ctx context.Context) func() error {
 		a.MountRouter("Native API", consts.URLPathNativeAPI, CreateNativeAPIRouter(ctx))
 		a.MountRouter("Subsonic API", consts.URLPathSubsonicAPI, CreateSubsonicAPIRouter(ctx))
 		a.MountRouter("Public Endpoints", consts.URLPathPublic, CreatePublicRouter())
-		if conf.Server.LastFM.Enabled {
-			a.MountRouter("LastFM Auth", consts.URLPathNativeAPI+"/lastfm", CreateLastFMRouter())
-		}
 		if conf.Server.ListenBrainz.Enabled {
 			a.MountRouter("ListenBrainz Auth", consts.URLPathNativeAPI+"/listenbrainz", CreateListenBrainzRouter())
 		}

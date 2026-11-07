@@ -105,7 +105,7 @@ var _ = Describe("Responses", func() {
 					Name:           "aaa",
 					Starred:        &t,
 					UserRating:     3,
-					ArtistImageUrl: "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+					ArtistImageUrl: "https://images.example.com/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
 				}
 				index := make([]Index, 1)
 				index[0] = Index{Name: "A", Artists: artists}
@@ -145,7 +145,7 @@ var _ = Describe("Responses", func() {
 					Starred:        &t,
 					UserRating:     3,
 					AlbumCount:     2,
-					ArtistImageUrl: "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+					ArtistImageUrl: "https://images.example.com/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
 				}
 				index := make([]IndexID3, 1)
 				index[0] = IndexID3{Name: "A", Artists: artists}
@@ -170,7 +170,7 @@ var _ = Describe("Responses", func() {
 					Starred:        &t,
 					UserRating:     3,
 					AlbumCount:     2,
-					ArtistImageUrl: "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+					ArtistImageUrl: "https://images.example.com/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
 				}
 				artists[0].OpenSubsonicArtistID3 = &OpenSubsonicArtistID3{
 					MusicBrainzId: "1234",
@@ -613,10 +613,9 @@ var _ = Describe("Responses", func() {
 
 		Context("with data", func() {
 			BeforeEach(func() {
-				response.AlbumInfo.SmallImageUrl = "https://lastfm.freetls.fastly.net/i/u/34s/3b54885952161aaea4ce2965b2db1638.png"
-				response.AlbumInfo.MediumImageUrl = "https://lastfm.freetls.fastly.net/i/u/64s/3b54885952161aaea4ce2965b2db1638.png"
-				response.AlbumInfo.LargeImageUrl = "https://lastfm.freetls.fastly.net/i/u/174s/3b54885952161aaea4ce2965b2db1638.png"
-				response.AlbumInfo.LastFmUrl = "https://www.last.fm/music/Cher/Believe"
+				response.AlbumInfo.SmallImageUrl = "https://images.example.com/i/u/34s/3b54885952161aaea4ce2965b2db1638.png"
+				response.AlbumInfo.MediumImageUrl = "https://images.example.com/i/u/64s/3b54885952161aaea4ce2965b2db1638.png"
+				response.AlbumInfo.LargeImageUrl = "https://images.example.com/i/u/174s/3b54885952161aaea4ce2965b2db1638.png"
 				response.AlbumInfo.MusicBrainzID = "03c91c40-49a6-44a7-90e7-a700edf97a62"
 				response.AlbumInfo.Notes = "Believe is the twenty-third studio album by American singer-actress Cher..."
 			})
@@ -646,13 +645,12 @@ var _ = Describe("Responses", func() {
 
 		Context("with data", func() {
 			BeforeEach(func() {
-				response.ArtistInfo.Biography = `Black Sabbath is an English <a target='_blank' href="https://www.last.fm/tag/heavy%20metal" class="bbcode_tag" rel="tag">heavy metal</a> band`
+				response.ArtistInfo.Biography = `Black Sabbath is an English <a target='_blank' href="https://www.example.com/tag/heavy%20metal" class="bbcode_tag" rel="tag">heavy metal</a> band`
 				response.ArtistInfo.MusicBrainzID = "5182c1d9-c7d2-4dad-afa0-ccfeada921a8"
 
-				response.ArtistInfo.LastFmUrl = "https://www.last.fm/music/Black+Sabbath"
-				response.ArtistInfo.SmallImageUrl = "https://userserve-ak.last.fm/serve/64/27904353.jpg"
-				response.ArtistInfo.MediumImageUrl = "https://userserve-ak.last.fm/serve/126/27904353.jpg"
-				response.ArtistInfo.LargeImageUrl = "https://userserve-ak.last.fm/serve/_/27904353/Black+Sabbath+sabbath+1970.jpg"
+				response.ArtistInfo.SmallImageUrl = "https://images.example.com/serve/64/27904353.jpg"
+				response.ArtistInfo.MediumImageUrl = "https://images.example.com/serve/126/27904353.jpg"
+				response.ArtistInfo.LargeImageUrl = "https://images.example.com/serve/_/27904353/Black+Sabbath+sabbath+1970.jpg"
 				response.ArtistInfo.SimilarArtist = []Artist{
 					{Id: "22", Name: "Accept"},
 					{Id: "101", Name: "Bruce Dickinson"},

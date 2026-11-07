@@ -63,7 +63,7 @@ Folder = "/path/to/navidrome/plugins"
 Add the plugin to your agents list:
 
 ```toml
-Agents = "lastfm,wikimedia"
+Agents = "listenbrainz,wikimedia"
 ```
 
 ## Testing with Extism CLI
