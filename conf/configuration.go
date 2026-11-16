@@ -667,7 +667,13 @@ func setViperDefaults() {
 	viper.SetDefault("enabledownloads", true)
 	viper.SetDefault("enableexternalservices", true)
 	viper.SetDefault("enablem3uexternalalbumart", false)
-	viper.SetDefault("enablemediafilecoverart", true)
+	// cassette: off. A song's picture is its album's cover, the folder cover the person
+	// keeps on this computer (or the one they picked, which is written there), never the
+	// art inside one file. Store downloads often carry each single's own art in its
+	// tracks, so with this on a phone showed a single's picture for the whole album while
+	// the computer showed the folder cover. Off also answers song ids phones already
+	// hold (mf-...) with the album cover; the picture cache key carries this setting.
+	viper.SetDefault("enablemediafilecoverart", false)
 	viper.SetDefault("autotranscodedownload", false)
 	viper.SetDefault("defaultdownsamplingformat", consts.DefaultDownsamplingFormat)
 	viper.SetDefault("search.fullstring", false)

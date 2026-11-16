@@ -187,6 +187,9 @@ var _ = Describe("Artwork", func() {
 		})
 		Context("Embed images", func() {
 			BeforeEach(func() {
+				// cassette: these cover the per-file art path, which our fork turns off by
+				// default (Patch 010); switch it on so upstream's behavior stays tested.
+				conf.Server.EnableMediaFileCoverArt = true
 				folderRepo.result = []model.Folder{{
 					Path:       "tests/fixtures/artist/an-album",
 					ImageFiles: []string{"front.png"},
@@ -230,6 +233,16 @@ var _ = Describe("Artwork", func() {
 				_, path, err := aw.Reader(ctx)
 				Expect(err).ToNot(HaveOccurred())
 				Expect(path).To(Equal("al-444_0"))
+			})
+			It("cassette: answers a song with its album cover when per-file art is off", func() {
+				conf.Server.EnableMediaFileCoverArt = false
+				// An mf- id a phone stored while the setting was on still gets the album's cover.
+				aw, err := newMediafileArtworkReader(ctx, aw, model.MustParseArtworkID("mf-"+mfWithEmbed.ID))
+				Expect(err).ToNot(HaveOccurred())
+				_, path, err := aw.Reader(ctx)
+				Expect(err).ToNot(HaveOccurred())
+				Expect(path).To(Equal("al-222_0"))
+				Expect(mfWithEmbed.CoverArtID().Kind).To(Equal(model.KindAlbumArtwork))
 			})
 			It("returns album cover if media file has no cover art", func() {
 				aw, err := newMediafileArtworkReader(ctx, aw, model.MustParseArtworkID("mf-"+mfWithoutEmbed.ID))
